@@ -26,6 +26,7 @@ class Tache
 	void setTitre(string);
 	void initialiserDuree(int, string);
 	void setEtat(string);
+	
 };
 #endif
 

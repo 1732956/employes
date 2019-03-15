@@ -382,6 +382,13 @@ namespace employes {
 
 	private: System::Void btnAjouterTache_Click(System::Object^  sender, System::EventArgs^  e) {
 		Tache tacheCourante;
+		tacheCourante.setEtat(msclr::interop::marshal_as<std::string>(txtEtat->Text));
+		tacheCourante.setTitre(msclr::interop::marshal_as<std::string>(txtTitre->Text));
+		tacheCourante.setIdentifiant(msclr::interop::marshal_as<std::string>(txtIdentifiant->Text));
+		tacheCourante.initialiserDuree(Convert::ToInt32(txtDuree->Text), msclr::interop::marshal_as<std::string>(txtMesure->Text));
+			
+		
+	
 
 		ViderZonesTexteTache();
 	}
