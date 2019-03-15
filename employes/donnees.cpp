@@ -70,6 +70,21 @@ Employe Donnees::ChercherEmployeSelonNumero(string inNumero)
 Tache Donnees::ChercherTacheParIdentifiant(string inId)
 {
 	Tache tacheTrouve;
+	bool trouver = false;
+	int cptTache=0;
+	while (cptTache <= maxTaches && trouver==false )
+	{
+		if (lesTaches[cptTache]->getIdentifiant()==inId)
+		{
+			tacheTrouve.setEtat(lesTaches[cptTache]->getEtatAvancement());
+			tacheTrouve.setIdentifiant(lesTaches[cptTache]->getIdentifiant());
+			tacheTrouve.setTitre(lesTaches[cptTache]->getTitre());
+			tacheTrouve.initialiserDuree(lesTaches[cptTache]->getDuree(), lesTaches[cptTache]->getUniteMesure());
+		}
+
+
+		cptTache += 1;
+	}
 
 	return tacheTrouve;
 }
